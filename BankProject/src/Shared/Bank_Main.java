@@ -18,6 +18,7 @@ public class Bank_Main {
 
 		DatabaseConnection.getConnection();
 
+		// test
 		_accountController = new AccountController(new AccountDTO());
 
 		MenuView = new MenuView(_accountController);
