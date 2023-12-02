@@ -7,46 +7,46 @@ import Models.Account;
 
 public class AccountController {
 
-	private IAccountDTO _accountDAO;
+	private IAccountDTO _accountDTO;
 
-	public AccountController(IAccountDTO accountDAO) {
-		_accountDAO = accountDAO;
+	public AccountController(IAccountDTO accountDTO) {
+		_accountDTO = accountDTO;
 
 	}
 
 	public Account GetAccount(String accountNumber) throws SQLException {
 
-		return _accountDAO.find(accountNumber);
+		return _accountDTO.find(accountNumber);
 	}
 
 	public double deposit(String accountNumber, String balance) throws SQLException {
 
 		// TODO Auto-generated method stub
-		return _accountDAO.Deposit(accountNumber, Double.parseDouble(balance));
+		return _accountDTO.Deposit(accountNumber, Double.parseDouble(balance));
 
 	}
 
 	public double withdraw(String accountNumber, String balance) throws SQLException {
 		// TODO Auto-generated method stub
-		return _accountDAO.Withdraw(accountNumber, Double.parseDouble(balance));
+		return _accountDTO.Withdraw(accountNumber, Double.parseDouble(balance));
 
 	}
 
 	public int DeleteAccount(Account _account) throws SQLException {
 		// TODO Auto-generated method stub
 
-		return _accountDAO.delete(_account);
+		return _accountDTO.delete(_account);
 
 	}
 
 	public int CreateAccount(Account account) throws SQLException {
 
-		return _accountDAO.create(account);
+		return _accountDTO.create(account);
 	}
 
 	public int UpdateAccount(Account account) throws SQLException {
 
-		return _accountDAO.update(account);
+		return _accountDTO.update(account);
 	}
 
 }
